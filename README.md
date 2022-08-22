@@ -2,7 +2,7 @@
 Kanban board located in project tab
 ## Team members
 - Brayden
-- John
+- John #Awww yea
 - Juan
 - Dwain
 - Leone
