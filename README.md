@@ -5,4 +5,4 @@ Kanban board located in project tab
 - John #Awww yea
 - Juan
 - Dwain
-- Leone
+- Leone #Here
