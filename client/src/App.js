@@ -1,29 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+
 import './App.css';
 
+import NavBar from './Components/NavBar';
+import Home from './Components/Home';
+import Login from './Components/Login';
+
+
 function App() {
-
-  const [articleList, setArticleList] = useState([]);
-
-    // Using Axios send an http request to one of our custom routes created in the server index.js file
-    useEffect(()=> {
-      Axios.get("http://localhost:3001/read").then((response)=> {
-        setArticleList(response.data);
-      });
-    }, []);
-
   return (
     <div className="App">
-      <h1>Article List</h1>
-      {articleList.map((value, key) => {
-        return (
-          <div key={key}>
-          {/* <h3>{value.category}</h3> */}
-          <h3>{value.name}</h3>
-          </div>
-        )
-      })}
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+        
+      </Router>
     </div>
   );
 }

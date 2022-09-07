@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -7,6 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 const ArticleModel = require('./models/Article.js');
+
 
 mongoose.connect("mongodb+srv://bdaw211:ZmAKUg7kKKEVltlC@teamproject.o3vp87l.mongodb.net/schooldb?retryWrites=true&w=majority", {
     useNewUrlParser: true,
