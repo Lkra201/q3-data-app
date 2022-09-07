@@ -5,7 +5,7 @@ Kanban board located in project tab
 - John #Awww yea
 - Juan
 - Dwain #DontGetMeStarted
-- Leone
+- Leone #Donee
 
 ### Instructions for downloading this project and running on your local machine.
 - Clone this project.
