@@ -19,10 +19,11 @@ function Home() {
   return (
     <div>
         <h1>Article List</h1>
-        <input type="search" name='searchTerm' placeholder='search title...' onChange={(event)=>{setTextSearch(event.target.value)}} />
-      
-        {articleList.filter(({name})=>name.includes(textSearch)).map((value, key) => {
+        <input type="search" name='searchTerm' placeholder='title keyword....' onChange={(event)=>{setTextSearch(event.target.value)}} />
+        
+        {articleList.filter(({name})=>name.toLowerCase().includes(textSearch.toLowerCase())).map((value, key) => {
             return (
+                
                 <div key={key}>
                     <h3>{value.name}</h3>
                 </div>
