@@ -1,3 +1,4 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -8,12 +9,44 @@ app.use(cors());
 
 const ArticleModel = require('./models/Article.js');
 
+
 mongoose.connect("mongodb+srv://bdaw211:ZmAKUg7kKKEVltlC@teamproject.o3vp87l.mongodb.net/schooldb?retryWrites=true&w=majority", {
     useNewUrlParser: true,
 });
 
+// API to retrieve all data from the database
 app.get('/read', async (req, res) => {
     ArticleModel.find({}, (error, result) => {
+        if (error){
+            res.send(error);
+        }
+        res.send(result);
+    });
+});
+
+// API to retrieve all documents with the category type 'ARTS'
+app.get('/read/arts', async (req, res) => {
+    ArticleModel.find({category: 'Arts'}, (error, result) => {
+        if (error){
+            res.send(error);
+        }
+        res.send(result);
+    });
+});
+
+// API to retrieve all documents with the category type 'Methematics'
+app.get('/read/mathematics', async (req, res) => {
+    ArticleModel.find({category: 'Mathematics'}, (error, result) => {
+        if (error){
+            res.send(error);
+        }
+        res.send(result);
+    });
+});
+
+// API to retrieve all documents with the category type 'Technology'
+app.get('/read/technology', async (req, res) => {
+    ArticleModel.find({category: 'Technology'}, (error, result) => {
         if (error){
             res.send(error);
         }
